@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reliance Care Solutions | Home Care & Support Services — Northwest Ohio</title>
+<meta name="description" content="Compassionate home care, youth programs, respite services, and direct support across all 88 Ohio counties. DODD Certified. Call (419) 704-0316.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0c1f38; --navy2:#142c4a; --teal:#1a6870; --teal2:#23929d;
+  --green:#2da96b; --green2:#3ec87f; --gold:#c69b3a; --gold2:#e0b44a;
+  --cream:#f5f2ed; --white:#fff; --gray:#6b7787; --glt:#f0f3f7;
+  --text:#1a2332; --bdr:rgba(0,0,0,.08);
+  --fd:'Cormorant Garamond',serif; --fb:'Outfit',sans-serif;
+  --sh1:0 2px 12px rgba(0,0,0,.07);
+  --sh2:0 8px 32px rgba(0,0,0,.10);
+  --sh3:0 24px 64px rgba(0,0,0,.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--text);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:var(--fb);border:none;background:none}
+
+/* PAGES */
+.page{display:none}
+.page.active{display:block}
+
+/* TOP BAR */
+.topbar{background:var(--navy);padding:8px 5%;font-size:12.5px;color:rgba(255,255,255,.5)}
+.topbar-i{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.topbar a{color:rgba(255,255,255,.7);transition:color .2s}.topbar a:hover{color:var(--green2)}
+
+/* NAV */
+#nav{background:#fff;border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:1000;transition:box-shadow .25s}
+#nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.1)}
+.nav-w{max-width:1280px;margin:0 auto;padding:0 5%;display:flex;align-items:center;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;cursor:pointer}
+.logo img{height:44px;width:auto;object-fit:contain}
+.logofb{display:none;align-items:center;gap:10px}
+.lc{width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:18px;font-weight:700}
+.lt{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--navy);line-height:1.25}
+.lt em{color:var(--teal);font-style:normal}
+.navlinks{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}
+.navlinks li{position:relative}
+.navlinks>li>a{display:block;padding:9px 13px;font-size:14px;font-weight:500;color:var(--text);border-radius:8px;transition:background .18s,color .18s;white-space:nowrap;cursor:pointer}
+.navlinks>li>a:hover,.navlinks>li>a.on{background:rgba(26,104,112,.08);color:var(--teal)}
+.navlinks>li>a.on{font-weight:600}
+.ddw{position:relative}
+.dd{position:absolute;top:calc(100% + 4px);left:0;background:#fff;border-radius:14px;border:1px solid var(--bdr);box-shadow:var(--sh3);min-width:200px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .2s;z-index:100}
+.ddw:hover .dd{opacity:1;visibility:visible;transform:translateY(0)}
+.dd li a{display:block;padding:10px 18px;font-size:13.5px;color:var(--text);border-bottom:1px solid var(--bdr);cursor:pointer;transition:background .15s,color .15s}
+.dd li:last-child a{border:none}.dd li a:hover{background:var(--glt);color:var(--teal)}
+.navcta{background:var(--teal);color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap;flex-shrink:0;transition:background .2s,transform .15s;display:inline-block}
+.navcta:hover{background:var(--green);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;margin-left:auto}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+.mobnav{display:none;flex-direction:column;background:#fff;padding:16px 5% 24px;border-top:1px solid var(--bdr);position:fixed;top:112px;left:0;right:0;z-index:999;box-shadow:var(--sh3)}
+.mobnav.open{display:flex}
+.mobnav a{padding:12px 0;font-size:15px;font-weight:500;color:var(--text);border-bottom:1px solid var(--bdr);cursor:pointer;transition:color .2s}
+.mobnav a:hover{color:var(--teal)}
+.mobnav .mcta{margin-top:12px;background:var(--teal);color:#fff!important;padding:13px;border-radius:8px;text-align:center;font-weight:600;border:none}
+.mobnav .mphone{text-align:center;color:var(--teal)!important;font-weight:700;font-size:17px;border:none!important}
+
+/* BUTTONS */
+.btn{display:inline-block;padding:13px 28px;border-radius:8px;font-family:var(--fb);font-weight:600;font-size:14.5px;cursor:pointer;border:2px solid transparent;transition:all .2s;line-height:1}
+.btn-p{background:var(--teal);color:#fff}.btn-p:hover{background:var(--green);transform:translateY(-1px)}
+.btn-s{background:#fff;color:var(--teal);border-color:var(--teal)}.btn-s:hover{background:var(--teal);color:#fff}
+.btn-w{background:#fff;color:var(--navy)}.btn-w:hover{background:var(--cream)}
+.btn-ow{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}.btn-ow:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-red{background:#c62828;color:#fff}.btn-red:hover{background:#a31e1e}
+
+/* SECTION */
+section{padding:96px 5%}
+.wrap{max-width:1280px;margin:0 auto}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:26px;height:2px;background:var(--teal);flex-shrink:0}
+.eyebrow.gold{color:var(--gold)}.eyebrow.gold::before{background:var(--gold)}
+.eyebrow.lt{color:var(--green2)}.eyebrow.lt::before{background:var(--green2)}
+.eyebrow.center{justify-content:center}
+.stitle{font-family:var(--fd);font-size:clamp(1.9rem,3vw,2.9rem);color:var(--navy);line-height:1.15;margin-bottom:16px}
+.stitle.wh{color:#fff}
+.sintro{font-size:16px;line-height:1.78;color:var(--gray);max-width:620px}
+.sintro.cx{text-align:center;margin:0 auto}
+
+/* PAGE HERO */
+.phero{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden}
+.phero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.4)}
+.phero-ov{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,25,46,.93) 45%,rgba(10,25,46,.38) 100%)}
+.phero-c{position:relative;z-index:2;max-width:1280px;width:100%;margin:0 auto;padding:80px 5% 72px}
+.breadcrumb{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green2);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.breadcrumb::before{content:'';width:22px;height:2px;background:var(--green2)}
+.phero-c h1{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4rem);color:#fff;font-weight:700;line-height:1.1;max-width:720px;margin-bottom:18px}
+.phero-c p{font-size:17px;color:rgba(255,255,255,.72);max-width:560px;line-height:1.7}
+.hacts{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+
+/* STATS BAND */
+.sband{background:var(--navy);padding:60px 5%}
+.sgrid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.snum{font-family:var(--fd);font-size:clamp(2.4rem,4vw,3.4rem);font-weight:700;color:var(--green2);display:block;line-height:1}
+.slbl{font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:8px;display:block}
+
+/* SERVICE CARD */
+.scard{background:#fff;border-radius:14px;padding:30px;border:1px solid var(--bdr);transition:box-shadow .25s,transform .25s;position:relative;overflow:hidden}
+.scard::after{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--teal),var(--green));transform:scaleY(0);transform-origin:bottom;transition:transform .3s}
+.scard:hover{box-shadow:var(--sh3);transform:translateY(-4px)}.scard:hover::after{transform:scaleY(1)}
+.sico{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,rgba(26,104,112,.1),rgba(45,169,107,.12));display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px}
+.scard h3{font-size:1.02rem;font-weight:600;color:var(--navy);margin-bottom:9px}
+.scard p{font-size:13.5px;color:var(--gray);line-height:1.68}
+.stag{display:inline-block;margin-top:13px;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:100px;background:rgba(26,104,112,.1);color:var(--teal)}
+.stag.gold{background:rgba(198,155,58,.12);color:#966e0d}
+
+/* REVEAL ANIMATION */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rv.vis{opacity:1;transform:none}
+
+/* ===================== HOME PAGE ===================== */
+.hhero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hhbg{position:absolute;inset:0;background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/185e7929-15ea-4382-b6be-5e474247b54e/Reliance+Care+Solutions.jpg');background-size:cover;background-position:center top}
+.hhbg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,25,46,.94) 45%,rgba(10,25,46,.5) 100%)}
+.hh-inner{position:relative;z-index:2;max-width:1280px;width:100%;margin:0 auto;padding:140px 5% 100px;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(62,200,127,.12);border:1px solid rgba(62,200,127,.3);color:var(--green2);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:22px;width:fit-content}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hh-inner h1{font-family:var(--fd);font-size:clamp(2.8rem,5.5vw,5rem);color:#fff;font-weight:700;line-height:1.08;margin-bottom:20px}
+.hh-inner h1 span{color:var(--green2)}
+.hsub{font-size:17px;color:rgba(255,255,255,.72);line-height:1.72;max-width:520px;margin-bottom:34px}
+.hctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.htrust{display:flex;align-items:center;gap:24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.hti{display:flex;align-items:center;gap:10px}
+.hticon{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.hti span{font-size:13px;color:rgba(255,255,255,.65);font-weight:500;line-height:1.35}
+
+/* HERO CARD */
+.hcard{background:#fff;border-radius:20px;box-shadow:0 40px 80px rgba(0,0,0,.45);overflow:hidden;animation:floatup .9s ease .3s both}
+@keyframes floatup{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hcard-img{width:100%;height:225px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--teal),var(--navy))}
+.hcard-body{padding:24px 26px 26px}
+.hcard-body h3{font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin-bottom:6px}
+.hcard-body p{font-size:13.5px;color:var(--gray);line-height:1.6;margin-bottom:16px}
+.hclist{display:flex;flex-direction:column;gap:8px}
+.hclist li{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:500;color:var(--text)}
+.hclist li::before{content:'✓';width:19px;height:19px;flex-shrink:0;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.hcard-foot{margin-top:18px;padding-top:16px;border-top:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between}
+.hcard-foot a{font-size:13.5px;font-weight:600;color:var(--teal);cursor:pointer;transition:opacity .2s}.hcard-foot a:hover{opacity:.7}
+.hcard-cert{font-size:11px;color:var(--gray);font-weight:500}
+
+/* ABOUT STRIP */
+.astrip{background:var(--cream);padding:80px 5%}
+.astrip-i{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.aimg-wrap{position:relative}
+.aimg{width:100%;height:480px;object-fit:cover;border-radius:22px;display:block;background:linear-gradient(135deg,var(--navy),var(--teal))}
+.abadge{position:absolute;bottom:24px;left:24px;right:24px;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:var(--sh2);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.abstat strong{display:block;font-family:var(--fd);font-size:1.8rem;color:var(--teal);line-height:1}
+.abstat span{font-size:12px;color:var(--gray);margin-top:4px;display:block}
+.atext p{font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:16px}
+
+/* SERVICES GRID */
+.sgrid6{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sec-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;gap:20px;flex-wrap:wrap}
+
+/* YOUTH BANNER */
+.ybanner{background:var(--navy);padding:96px 5%;position:relative;overflow:hidden}
+.yb-circle{position:absolute;top:-120px;right:-120px;width:550px;height:550px;border-radius:50%;background:rgba(26,104,112,.12);pointer-events:none}
+.yb-i{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.yb-txt p{font-size:15.5px;color:rgba(255,255,255,.68);line-height:1.78;margin-bottom:18px}
+.yb-acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+
+/* YOUTH IMAGE BOX */
+.yb-imgbox{width:100%;height:440px;border-radius:22px;overflow:hidden;position:relative}
+.yb-imgbox img{width:100%;height:100%;object-fit:cover;display:block}
+.yb-imgbox-fb{position:absolute;inset:0;background:linear-gradient(135deg,#0c1f38 0%,#1a6870 40%,#2da96b 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;opacity:0;transition:opacity .3s}
+.yb-imgbox-fb.show{opacity:1}
+.yb-imgbox-fb .fbicon{font-size:80px}
+.yb-imgbox-fb .fbtext{font-family:var(--fd);font-size:1.35rem;color:rgba(255,255,255,.85);font-style:italic;text-align:center;padding:0 24px;line-height:1.5}
+.ybtags{position:absolute;bottom:22px;left:22px;display:flex;flex-wrap:wrap;gap:8px;z-index:2}
+.ytag{background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11.5px;font-weight:600;padding:6px 14px;border-radius:100px}
+
+/* PHOTO STRIP */
+.pstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;height:300px}
+.ps-item{overflow:hidden;position:relative;background:var(--navy)}
+.ps-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.ps-item:hover img{transform:scale(1.06)}
+.ps-fb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:52px}
+
+/* WAIVER */
+.wsec{background:#fff;padding:80px 5%}
+.wsec-i{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.wpills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.wpill{background:var(--glt);border-radius:100px;padding:10px 20px;font-size:13.5px;font-weight:500;color:var(--navy);display:flex;align-items:center;gap:8px;border:1.5px solid var(--bdr);transition:all .2s}
+.wpill:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.wpill::before{content:'✓';width:17px;height:17px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
+.wbox{background:var(--navy);border-radius:22px;padding:48px 42px;color:#fff}
+.wbox h3{font-family:var(--fd);font-size:1.9rem;color:#fff;margin-bottom:14px}
+.wbox p{font-size:15px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:28px}
+.wphone{display:flex;align-items:center;gap:12px;margin-top:16px}
+.wph-ico{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:22px}
+.wph-ico+div a{font-size:1.4rem;font-weight:700;color:var(--green2);font-family:var(--fd);display:block}
+.wph-ico+div span{font-size:12px;color:rgba(255,255,255,.5);display:block}
+
+/* CTA BAND */
+.ctaband{position:relative;overflow:hidden;padding:96px 5%}
+.ctaband-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.28)}
+.ctaband-c{position:relative;z-index:2;max-width:760px;margin:0 auto;text-align:center}
+.ctaband-c p{color:rgba(255,255,255,.72);font-size:16.5px;line-height:1.78;margin-bottom:36px}
+.ctaband-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ===================== SERVICES PAGE ===================== */
+.sdc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sdcard{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--bdr);transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
+.sdcard:hover{box-shadow:var(--sh3);transform:translateY(-4px)}
+.sdcard-hdr{padding:26px 26px 0;display:flex;align-items:flex-start;gap:14px}
+.sdcard-htxt h3{font-size:1.02rem;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.sdcard-cat{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.sdcard-body{padding:14px 26px 26px;flex:1;display:flex;flex-direction:column}
+.sdcard-body p{font-size:13.5px;color:var(--gray);line-height:1.7;flex:1}
+.sdcard-foot{margin-top:16px;padding-top:14px;border-top:1px solid var(--bdr)}
+.sdcard-lnk{font-size:13px;font-weight:600;color:var(--teal);cursor:pointer;transition:opacity .2s}.sdcard-lnk:hover{opacity:.7}
+
+.featrow{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1280px;margin:0 auto;padding:80px 5%}
+.featrow.rev>*:first-child{order:2}.featrow.rev>*:last-child{order:1}
+.featimg{width:100%;height:400px;object-fit:cover;border-radius:22px;display:block;background:linear-gradient(135deg,var(--teal),var(--green))}
+.fcl{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.fcl li{display:flex;align-items:flex-start;gap:11px;font-size:14.5px;color:var(--text);line-height:1.5}
+.fcl li::before{content:'✓';width:21px;height:21px;flex-shrink:0;background:var(--teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:1px}
+
+.trainblock{background:var(--navy);border-radius:22px;padding:48px 52px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.trainblock h3{font-family:var(--fd);font-size:1.7rem;color:#fff;margin-bottom:12px}
+.trainblock>div:first-child p{font-size:14.5px;color:rgba(255,255,255,.65);line-height:1.75}
+.tbadges{display:flex;flex-direction:column;gap:12px}
+.tbadge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px}
+.tbadge-ico{font-size:24px}
+.tbadge-txt strong{display:block;color:#fff;font-size:13.5px;font-weight:600}
+.tbadge-txt span{font-size:12px;color:rgba(255,255,255,.55)}
+
+/* ===================== YOUTH PAGE ===================== */
+.ypgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.ypcard{background:var(--glt);border-radius:22px;overflow:hidden;border:1px solid var(--bdr);transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
+.ypcard:hover{box-shadow:var(--sh3);transform:translateY(-4px)}
+.ypcard-banner{height:200px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.ypcard-banner img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block}
+.ypcard:hover .ypcard-banner img{transform:scale(1.05)}
+.ypcard-banner-fb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px}
+.ypcard-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px}
+.ypcard-body{padding:26px 28px 30px;flex:1;display:flex;flex-direction:column}
+.ypcard-body h3{font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:10px}
+.ypcard-body p{font-size:14px;color:var(--gray);line-height:1.7;flex:1}
+.ypcard-body .btn{margin-top:18px;align-self:flex-start}
+
+.ghfeat{background:var(--navy);padding:96px 5%;position:relative;overflow:hidden}
+.ghfeat-circle{position:absolute;bottom:-100px;left:-100px;width:550px;height:550px;border-radius:50%;background:rgba(26,104,112,.12);pointer-events:none}
+.gh-i{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.gh-img-wrap{border-radius:22px;overflow:hidden;height:460px;position:relative}
+.gh-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.gh-img-fb{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,104,112,.4),rgba(45,169,107,.3));display:flex;align-items:center;justify-content:center;font-size:80px}
+.gh-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:22px;color:#fff;font-size:13.5px;font-weight:500}
+.ghpts{display:flex;flex-direction:column;gap:14px;margin:22px 0}
+.ghpt{display:flex;align-items:flex-start;gap:12px}
+.ghpt-ico{width:34px;height:34px;border-radius:8px;flex-shrink:0;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:16px}
+.ghpt-txt strong{display:block;color:#fff;font-size:14px;font-weight:600}
+.ghpt-txt span{font-size:12.5px;color:rgba(255,255,255,.55)}
+
+.canssec{background:var(--cream)}
+.cans-i{display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:center}
+.cans-steps{margin-top:26px;display:flex;flex-direction:column;gap:18px}
+.cstep{display:flex;gap:16px;align-items:flex-start}
+.cstep-num{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.1rem;font-weight:700}
+.cstep-txt strong{display:block;color:var(--navy);font-size:14.5px;font-weight:600;margin-bottom:3px}
+.cstep-txt span{font-size:13.5px;color:var(--gray);line-height:1.6}
+.cans-img{width:100%;height:400px;object-fit:cover;border-radius:22px;display:block;background:linear-gradient(135deg,var(--teal),var(--green))}
+
+.ansec{background:#fff}
+.an-i{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.an-img{width:100%;height:440px;object-fit:cover;border-radius:22px;display:block;background:linear-gradient(135deg,var(--green),var(--gold))}
+.bengrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.bchip{background:var(--glt);border-radius:10px;padding:11px 15px;font-size:13px;font-weight:500;color:var(--navy);display:flex;align-items:center;gap:8px}
+.bchip::before{content:'✓';width:17px;height:17px;flex-shrink:0;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+
+.embar{background:linear-gradient(135deg,#8b1a1a,#c62828);border-radius:22px;padding:44px 52px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.embar-txt h3{font-family:var(--fd);font-size:1.7rem;color:#fff;margin-bottom:10px}
+.embar-txt p{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7}
+.embar-cta p{font-size:12px;color:rgba(255,255,255,.6);margin-top:8px;text-align:center}
+
+/* ===================== ABOUT PAGE ===================== */
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.mission-img{width:100%;height:500px;object-fit:cover;border-radius:22px;display:block;background:linear-gradient(135deg,var(--navy),var(--teal))}
+.mquote{background:var(--navy);border-radius:14px;padding:28px 32px;margin-top:28px}
+.mquote blockquote{font-family:var(--fd);font-size:1.2rem;color:#fff;font-style:italic;line-height:1.62}
+.mquote cite{display:block;margin-top:10px;font-size:12.5px;color:var(--green2);font-style:normal}
+.mission-txt p{font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:16px}
+
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.vcard{border-radius:14px;padding:36px;border:1px solid var(--bdr);text-align:center;transition:box-shadow .25s,transform .25s}
+.vcard:hover{box-shadow:var(--sh3);transform:translateY(-4px)}
+.vcard:nth-child(1){background:var(--navy)}.vcard:nth-child(2){background:var(--teal)}.vcard:nth-child(3){background:var(--green)}
+.vcard-ico{font-size:42px;margin-bottom:18px}
+.vcard h3{font-family:var(--fd);font-size:1.35rem;color:#fff;margin-bottom:10px}
+.vcard p{font-size:14px;color:rgba(255,255,255,.72);line-height:1.72}
+
+.certgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:48px}
+.certcard{background:#fff;border-radius:14px;padding:30px;border:1px solid var(--bdr);display:flex;gap:18px;align-items:flex-start;transition:box-shadow .2s}
+.certcard:hover{box-shadow:var(--sh2)}
+.certcard-ico{width:52px;height:52px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,rgba(26,104,112,.1),rgba(45,169,107,.12));display:flex;align-items:center;justify-content:center;font-size:24px}
+.certcard-txt h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:7px}
+.certcard-txt p{font-size:13.5px;color:var(--gray);line-height:1.68}
+
+.commgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.commcard{border-radius:14px;overflow:hidden;transition:box-shadow .25s,transform .25s}
+.commcard:hover{box-shadow:var(--sh3);transform:translateY(-4px)}
+.commcard-img{height:200px;overflow:hidden;position:relative}
+.commcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block}
+.commcard:hover .commcard-img img{transform:scale(1.05)}
+.commcard-img-fb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:52px}
+.commcard-body{padding:22px 24px;background:var(--cream)}
+.commcard-body h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+.commcard-body p{font-size:13.5px;color:var(--gray);line-height:1.65}
+
+.servesec{background:var(--navy);padding:96px 5%}
+.serve-i{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.serve-txt p{font-size:15.5px;color:rgba(255,255,255,.68);line-height:1.78;margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:8px 17px;color:rgba(255,255,255,.82);font-size:13.5px;font-weight:500;transition:background .2s}
+.chip:hover{background:rgba(255,255,255,.14)}
+.serve-vis{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.svi{border-radius:14px;overflow:hidden}
+.svi img{width:100%;height:180px;object-fit:cover;display:block}
+.svi:first-child{grid-column:1/-1}.svi:first-child img{height:210px}
+.svi-fb{display:flex;align-items:center;justify-content:center;font-size:44px}
+
+/* ===================== CONTACT PAGE ===================== */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}
+.ciccards{display:flex;flex-direction:column;gap:18px}
+.cic{background:#fff;border-radius:14px;padding:26px 30px;border:1px solid var(--bdr);display:flex;gap:16px;align-items:flex-start;transition:box-shadow .2s}
+.cic:hover{box-shadow:var(--sh2)}
+.cic-ico{width:48px;height:48px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,rgba(26,104,112,.1),rgba(45,169,107,.12));display:flex;align-items:center;justify-content:center;font-size:22px}
+.cic-txt h4{font-size:12.5px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.cic-txt a,.cic-txt p{font-size:15px;font-weight:600;color:var(--navy);line-height:1.5}
+.cic-txt a:hover{color:var(--teal)}
+.cic-txt .sub{font-size:12px;color:var(--gray);font-weight:400;display:block;margin-top:2px}
+.urgbar{background:linear-gradient(135deg,var(--navy),#1a3a5c);border-radius:14px;padding:28px 32px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.urgbar-txt h4{font-family:var(--fd);font-size:1.25rem;color:#fff;margin-bottom:5px}
+.urgbar-txt p{font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.6}
+.mapbox{background:var(--glt);border-radius:14px;height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid var(--bdr);margin-top:18px}
+.mapbox p{font-size:13px;color:var(--gray)}
+.mapbox a{font-size:13.5px;font-weight:600;color:var(--teal)}
+
+.formcard{background:#fff;border-radius:22px;padding:46px;box-shadow:var(--sh2);border:1px solid var(--bdr)}
+.formcard h2{font-family:var(--fd);font-size:1.8rem;color:var(--navy);margin-bottom:8px}
+.formcard>p{font-size:14.5px;color:var(--gray);line-height:1.65;margin-bottom:24px}
+.intopts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.iopt{background:var(--glt);border-radius:8px;padding:14px 18px;border:2px solid var(--bdr);cursor:pointer;transition:all .2s;text-align:center}
+.iopt:hover,.iopt.sel{border-color:var(--teal);background:rgba(26,104,112,.06)}
+.iopt .iico{font-size:26px;margin-bottom:6px}
+.iopt h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.iopt p{font-size:12px;color:var(--gray)}
+.fgrid{display:flex;flex-direction:column;gap:16px}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:13px;font-weight:600;color:var(--navy)}
+.fg input,.fg select,.fg textarea{padding:11px 15px;border-radius:8px;border:1.5px solid rgba(0,0,0,.15);font-family:var(--fb);font-size:14px;color:var(--text);background:#fff;transition:border-color .2s;outline:none;width:100%}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(26,104,112,.08)}
+.fg textarea{resize:vertical;min-height:110px}
+.fsubmit{margin-top:6px;width:100%;padding:15px;background:var(--teal);color:#fff;border:none;border-radius:8px;font-family:var(--fb);font-size:16px;font-weight:600;cursor:pointer;transition:background .2s}
+.fsubmit:hover{background:var(--green)}
+.fdisc{font-size:12px;color:var(--gray);margin-top:10px;text-align:center;line-height:1.5}
+
+.faqgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
+.faqitem{background:var(--glt);border-radius:14px;padding:26px 30px;border:1px solid var(--bdr)}
+.faqitem h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:9px}
+.faqitem p{font-size:13.5px;color:var(--gray);line-height:1.7}
+
+/* ===================== FOOTER ===================== */
+#footer{background:var(--navy)}
+.ft-top{max-width:1280px;margin:0 auto;padding:72px 5% 56px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-logo{height:42px;width:auto;filter:brightness(10);margin-bottom:14px;display:block}
+.ft-brand p{font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.5);margin-bottom:18px}
+.ftsocials{display:flex;gap:10px}
+.ftsocials a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;transition:background .2s;cursor:pointer}
+.ftsocials a:hover{background:var(--teal)}
+.ftcol h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.ftcol ul{display:flex;flex-direction:column;gap:9px}
+.ftcol ul li a{font-size:13.5px;color:rgba(255,255,255,.62);transition:color .2s;cursor:pointer;display:block}
+.ftcol ul li a:hover{color:#fff}
+.ftcol ul li span{font-size:13.5px;color:rgba(255,255,255,.5);display:block;line-height:1.5}
+.ft-bot{max-width:1280px;margin:0 auto;padding:22px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-bot p{font-size:12.5px;color:rgba(255,255,255,.3)}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:1100px){
+  .hh-inner{grid-template-columns:1fr;gap:48px}
+  .astrip-i,.yb-i,.mission-grid,.wsec-i,.serve-i,.cans-i,.an-i,.gh-i,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .sgrid6{grid-template-columns:repeat(2,1fr)}
+  .vgrid{grid-template-columns:1fr}
+  .ypgrid{grid-template-columns:1fr}
+  .embar{grid-template-columns:1fr;gap:20px}
+  .trainblock{grid-template-columns:1fr;padding:36px}
+  .featrow{grid-template-columns:1fr;gap:32px}
+  .featrow.rev>*:first-child,.featrow.rev>*:last-child{order:unset}
+}
+@media(max-width:900px){
+  .navlinks,.navcta{display:none}.hamburger{display:flex}
+  .sgrid{grid-template-columns:repeat(2,1fr)}
+  .ft-top{grid-template-columns:1fr 1fr;gap:36px}
+  section{padding:72px 5%}
+}
+@media(max-width:640px){
+  .sgrid6,.sdc-grid,.certgrid,.commgrid,.faqgrid,.serve-vis{grid-template-columns:1fr}
+  .sgrid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .pstrip{grid-template-columns:repeat(2,1fr);height:240px}
+  .ft-top{grid-template-columns:1fr}
+  .frow2{grid-template-columns:1fr}
+  .intopts{grid-template-columns:1fr}
+  .hh-inner{padding:120px 5% 80px}
+  section{padding:56px 5%}
+  .bengrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="topbar-i">
+    <span>📍 3454 Oak Alley Ct., Suite 108, Toledo, OH 43606</span>
+    <span><a href="tel:4197040316">(419) 704-0316</a> &nbsp;|&nbsp; <a href="mailto:info@reliancecaresolutions.com">info@reliancecaresolutions.com</a></span>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="nav-w">
+    <div class="logo" onclick="go('home')">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/409f08f9-744b-40e4-bff0-e00f0e11735e/Reliance+Care+Solutions+Logo.png?format=300w"
+        alt="Reliance Care Solutions Logo"
+        onerror="this.style.display='none';document.querySelector('.logofb').style.display='flex'">
+      <div class="logofb">
+        <div class="lc">R</div>
+        <div class="lt">Reliance Care<br><em>Solutions</em></div>
+      </div>
+    </div>
+    <ul class="navlinks">
+      <li><a id="nl-home" class="on" onclick="go('home')">Home</a></li>
+      <li class="ddw">
+        <a id="nl-services" onclick="go('services')">Services ▾</a>
+        <ul class="dd">
+          <li><a onclick="go('services')">In-Home Caregiving</a></li>
+          <li><a onclick="go('services')">Respite Services</a></li>
+          <li><a onclick="go('services')">Adult Day Programs</a></li>
+          <li><a onclick="go('services')">Vocational Rehabilitation</a></li>
+          <li><a onclick="go('services')">Non-Medical Transportation</a></li>
+        </ul>
+      </li>
+      <li><a id="nl-youth" onclick="go('youth')">Youth Programs</a></li>
+      <li><a id="nl-about" onclick="go('about')">About Us</a></li>
+      <li><a id="nl-contact" onclick="go('contact')">Contact</a></li>
+    </ul>
+    <a href="https://form.jotform.com/241017666657159" target="_blank" class="navcta">Apply Now</a>
+    <button class="hamburger" onclick="toggleMob()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobnav" id="mobnav">
+  <a onclick="go('home');toggleMob()">Home</a>
+  <a onclick="go('services');toggleMob()">Services</a>
+  <a onclick="go('youth');toggleMob()">Youth Programs</a>
+  <a onclick="go('about');toggleMob()">About Us</a>
+  <a onclick="go('contact');toggleMob()">Contact</a>
+  <a href="https://form.jotform.com/241017666657159" target="_blank" class="mcta">Apply Now</a>
+  <a href="tel:4197040316" class="mphone">(419) 704-0316</a>
+</div>
+
+<!-- ============================================================
+     HOME PAGE
+============================================================ -->
+<div id="pg-home" class="page active">
+
+  <!-- HERO -->
+  <div class="hhero">
+    <div class="hhbg"></div>
+    <div class="hh-inner">
+      <div>
+        <div class="hbadge"><span class="pulse"></span> Serving All 88 Ohio Counties</div>
+        <h1>Compassionate Care,<br><span>Trusted by</span><br>Northwest Ohio</h1>
+        <p class="hsub">Professional home care, youth programs, and direct support for individuals with developmental disabilities, seniors, and children — available 7 days a week, 24 hours a day.</p>
+        <div class="hctas">
+          <button class="btn btn-p" onclick="go('contact')">Get a Free Consultation</button>
+          <button class="btn btn-ow" onclick="go('services')">Explore Services</button>
+        </div>
+        <div class="htrust">
+          <div class="hti"><div class="hticon">🏅</div><span>DODD Certified<br>All 88 Counties</span></div>
+          <div class="hti"><div class="hticon">🕐</div><span>24/7 Care<br>Available</span></div>
+          <div class="hti"><div class="hticon">🩺</div><span>On-Call RN<br>Support</span></div>
+        </div>
+      </div>
+      <div class="hcard">
+        <img class="hcard-img"
+          src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b860b3a6-42ee-4478-ae23-64a006e359ff/Reliance+Care+Solutions+%282%29.jpg"
+          alt="Reliance Care Solutions caregiver with client"
+          onerror="this.style.background='linear-gradient(135deg,#1a6870,#0c1f38)';this.style.height='225px'">
+        <div class="hcard-body">
+          <h3>Start With a Meet &amp; Greet</h3>
+          <p>We'll learn your loved one's needs and build a personalized care plan together.</p>
+          <ul class="hclist">
+            <li>Customized care plan — no one-size-fits-all</li>
+            <li>Trained, CPR &amp; First Aid certified caregivers</li>
+            <li>Flexible scheduling around your life</li>
+            <li>Waiver &amp; Medicaid accepted</li>
+          </ul>
+          <div class="hcard-foot">
+            <a onclick="go('contact')">Schedule Your Meet &amp; Greet →</a>
+            <span class="hcard-cert">DODD Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="sband">
+    <div class="sgrid wrap">
+      <div class="rv"><span class="snum">88</span><span class="slbl">Ohio Counties Served</span></div>
+      <div class="rv"><span class="snum">24/7</span><span class="slbl">Care Availability</span></div>
+      <div class="rv"><span class="snum">12+</span><span class="slbl">Programs &amp; Services</span></div>
+      <div class="rv"><span class="snum">100%</span><span class="slbl">Client-Centered Care</span></div>
+    </div>
+  </div>
+
+  <!-- ABOUT STRIP -->
+  <div class="astrip">
+    <div class="astrip-i">
+      <div class="aimg-wrap rv">
+        <img class="aimg"
+          src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b1ea37ec-5ba5-45c2-b991-4211c83a3bde/Group+activities+for+those+with+disabilities+in+toledo"
+          alt="Group activities for individuals with disabilities in Toledo Ohio"
+          onerror="this.style.background='linear-gradient(135deg,#1a6870,#2da96b)'">
+        <div class="abadge">
+          <div class="abstat"><strong>7 Days</strong><span>Available every week</span></div>
+          <div class="abstat"><strong>Toledo, OH</strong><span>Northwest Ohio based</span></div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="eyebrow">Who We Are</div>
+        <h2 class="stitle">Reliance Care Solutions — Your Community Partner</h2>
+        <div class="atext">
+          <p>At Reliance Care Solutions, we believe every person deserves to live with dignity, independence, and joy. Founded and rooted in Northwest Ohio, we provide personalized in-home care and community-based support for individuals with developmental and physical disabilities, seniors, and children.</p>
+          <p>We are proud to be certified by the <strong>Ohio Department of Developmental Disabilities</strong> in all 88 counties — a testament to our commitment to consistent, accountable, high-quality care.</p>
+        </div>
+        <button class="btn btn-p" onclick="go('about')" style="margin-top:8px">Learn More About Us</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES PREVIEW -->
+  <section style="background:#fff">
+    <div class="wrap">
+      <div class="sec-hdr">
+        <div>
+          <div class="eyebrow">What We Offer</div>
+          <h2 class="stitle">Comprehensive Care Services</h2>
+        </div>
+        <button class="btn btn-s" onclick="go('services')">View All Services</button>
+      </div>
+      <div class="sgrid6">
+        <div class="scard rv"><div class="sico">🏠</div><h3>In-Home Caregiving</h3><p>Daily personal care, medication management, meal preparation, housekeeping, and compassionate companionship — tailored to your loved one's unique schedule and preferences.</p><span class="stag">Core Service</span></div>
+        <div class="scard rv"><div class="sico">🌿</div><h3>Respite Services</h3><p>Temporary relief for family caregivers, allowing them to rest and recharge while their loved one receives attentive support from our certified team.</p><span class="stag">Relief Care</span></div>
+        <div class="scard rv"><div class="sico">☀️</div><h3>Adult Day Services (A.M. &amp; P.M.)</h3><p>Structured morning and afternoon programs offering social engagement, therapeutic activities, and a safe, supportive environment for adults.</p><span class="stag">Day Program</span></div>
+        <div class="scard rv"><div class="sico">💼</div><h3>Vocational Rehabilitation</h3><p>We help individuals build the skills and confidence to find and maintain meaningful employment — focused on personal strengths and career goals.</p><span class="stag">Employment</span></div>
+        <div class="scard rv"><div class="sico">🐴</div><h3>Horse &amp; Animal Interactions</h3><p>Proven therapeutic benefits of equine and animal-assisted activities, promoting emotional healing and personal growth in a safe, nurturing environment.</p><span class="stag">Therapeutic</span></div>
+        <div class="scard rv"><div class="sico">🚐</div><h3>Non-Medical Transportation</h3><p>Safe, reliable transportation to appointments, activities, and events with trained drivers dedicated to every passenger's well-being.</p><span class="stag">Transportation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUTH BANNER -->
+  <div class="ybanner">
+    <div class="yb-circle"></div>
+    <div class="yb-i wrap">
+      <div class="rv">
+        <div class="eyebrow gold">For Children &amp; Families</div>
+        <h2 class="stitle wh">Youth Programs That Change Lives</h2>
+        <div class="yb-txt">
+          <p>Reliance Care Solutions offers a growing suite of specialized programs for children and young people — from group home services and CANS assessments to emergency respite placements and animal-assisted therapy.</p>
+          <p>Our team is trained, certified, and deeply committed to every child's safety, growth, and well-being.</p>
+        </div>
+        <div class="yb-acts">
+          <button class="btn btn-p" onclick="go('youth')">Explore Youth Programs</button>
+          <button class="btn btn-ow" onclick="go('contact')">Get in Touch</button>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="yb-imgbox" id="yb-imgbox">
+          <img id="yb-img-main"
+            src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b1ea37ec-5ba5-45c2-b991-4211c83a3bde/Group+activities+for+those+with+disabilities+in+toledo"
+            alt="Youth programs Reliance Care Solutions"
+            onerror="yb_fb1()">
+          <img id="yb-img-fb1" style="display:none"
+            src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/185e7929-15ea-4382-b6be-5e474247b54e/Reliance+Care+Solutions.jpg"
+            alt="Reliance Care Solutions youth"
+            onerror="yb_fb2()">
+          <img id="yb-img-fb2" style="display:none"
+            src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/8027cebd-881f-41bc-8a21-b17b61342302/in-home+care+for+adults+-+in+home+care+professional+-+direct+care+workers+toledo"
+            alt="Reliance Care Solutions care"
+            onerror="yb_fb3()">
+          <div class="yb-imgbox-fb" id="yb-imgbox-fb">
+            <span class="fbicon">🧒</span>
+            <span class="fbtext">"Supporting every child's journey to thrive"</span>
+          </div>
+          <div class="ybtags">
+            <span class="ytag">Group Homes</span>
+            <span class="ytag">CANS Assessment</span>
+            <span class="ytag">Emergency Respite</span>
+            <span class="ytag">Animal Therapy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO STRIP -->
+  <div class="pstrip">
+    <div class="ps-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b167d677-8cb4-4800-ab62-db25e4f045dc/the+best+in+home+care+services+in+northwest+ohio+with+reliance+care+solutions" alt="Best in-home care northwest Ohio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="ps-fb" style="display:none;background:linear-gradient(135deg,#1a6870,#2da96b)">🤝</div>
+    </div>
+    <div class="ps-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b860b3a6-42ee-4478-ae23-64a006e359ff/Reliance+Care+Solutions+%282%29.jpg" alt="Caregiver with client" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="ps-fb" style="display:none;background:linear-gradient(135deg,#0c1f38,#1a6870)">❤️</div>
+    </div>
+    <div class="ps-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b1ea37ec-5ba5-45c2-b991-4211c83a3bde/Group+activities+for+those+with+disabilities+in+toledo" alt="Group activities Toledo Ohio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="ps-fb" style="display:none;background:linear-gradient(135deg,#2da96b,#c69b3a)">🎉</div>
+    </div>
+    <div class="ps-item">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/8027cebd-881f-41bc-8a21-b17b61342302/in-home+care+for+adults+-+in+home+care+professional+-+direct+care+workers+toledo" alt="Direct care workers Toledo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="ps-fb" style="display:none;background:linear-gradient(135deg,#1a6870,#0c1f38)">🌟</div>
+    </div>
+  </div>
+
+  <!-- WAIVER -->
+  <div class="wsec">
+    <div class="wsec-i wrap">
+      <div class="rv">
+        <div class="eyebrow">Flexible Access</div>
+        <h2 class="stitle">Waiver &amp; Payment Options</h2>
+        <p class="sintro">We work with multiple Ohio waiver programs to make quality care accessible. Contact us to find out which programs your family may qualify for.</p>
+        <div class="wpills">
+          <div class="wpill">Individual Options Waiver</div>
+          <div class="wpill">Level One Waiver</div>
+          <div class="wpill">SELF Waiver</div>
+          <div class="wpill">My Life My Choice</div>
+          <div class="wpill">Medicaid / Medicare</div>
+          <div class="wpill">Private Pay</div>
+        </div>
+      </div>
+      <div class="wbox rv">
+        <h3>Ready to Take the First Step?</h3>
+        <p>Our team will guide you through every step — from understanding payment options to arranging a personal meet and greet with our dedicated caregivers.</p>
+        <button class="btn btn-p" onclick="go('contact')">Contact Our Team Today</button>
+        <div class="wphone">
+          <div class="wph-ico">📞</div>
+          <div><a href="tel:4197040316">(419) 704-0316</a><span>Mon – Fri, 9am – 5pm</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BAND -->
+  <div class="ctaband">
+    <div class="ctaband-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b167d677-8cb4-4800-ab62-db25e4f045dc/the+best+in+home+care+services+in+northwest+ohio+with+reliance+care+solutions')"></div>
+    <div class="ctaband-c">
+      <div class="eyebrow lt center">Take the First Step</div>
+      <h2 class="stitle wh" style="text-align:center;margin-bottom:16px">Help Your Loved One Experience<br>a Better Quality of Life</h2>
+      <p>We understand that choosing care services can feel overwhelming. Let us arrange a personal meet and greet — so we can understand your needs, introduce our staff, and build a plan that truly works for you.</p>
+      <div class="ctaband-acts">
+        <a href="https://form.jotform.com/241017666657159" class="btn btn-p" target="_blank">Apply Now</a>
+        <button class="btn btn-ow" onclick="go('contact')">Contact Us</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /pg-home -->
+<!-- ============================================================
+     SERVICES PAGE
+============================================================ -->
+<div id="pg-services" class="page">
+
+  <div class="phero">
+    <div class="phero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b167d677-8cb4-4800-ab62-db25e4f045dc/the+best+in+home+care+services+in+northwest+ohio+with+reliance+care+solutions')"></div>
+    <div class="phero-ov"></div>
+    <div class="phero-c">
+      <div class="breadcrumb">Our Services</div>
+      <h1>Comprehensive Care<br>Services for Every Need</h1>
+      <p>From in-home personal care and respite services to vocational rehabilitation and animal-assisted therapy — a full spectrum of support across Northwest Ohio.</p>
+      <div class="hacts">
+        <button class="btn btn-p" onclick="go('contact')">Request Care Services</button>
+        <button class="btn btn-ow" onclick="go('youth')">Youth Programs</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section style="background:var(--cream)">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center" class="svc-intro-grid">
+        <div class="rv" style="border-radius:22px;overflow:hidden;height:480px;position:relative">
+          <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b860b3a6-42ee-4478-ae23-64a006e359ff/Reliance+Care+Solutions+%282%29.jpg"
+            alt="Reliance Care Solutions caregiver"
+            style="width:100%;height:100%;object-fit:cover;display:block"
+            onerror="this.style.background='linear-gradient(135deg,#1a6870,#0c1f38)'">
+          <div style="position:absolute;top:22px;left:22px;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,.1);display:flex;align-items:center;gap:10px">
+            <div style="width:38px;height:38px;border-radius:8px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px">🏅</div>
+            <div><strong style="display:block;font-size:13px;color:var(--navy)">DODD Certified</strong><span style="font-size:12px;color:var(--gray)">All 88 Ohio Counties</span></div>
+          </div>
+        </div>
+        <div class="rv">
+          <div class="eyebrow">Services Overview</div>
+          <h2 class="stitle">Care That Fits Your Life</h2>
+          <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:16px">We provide caregiving services 7 days per week, 24 hours per day — because life doesn't stop on weekends. At Reliance Care Solutions, every service is built around the individual, not a one-size-fits-all model.</p>
+          <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:26px">Whether you need a few hours of respite, structured day programming, vocational support, or round-the-clock direct care — our trained staff are here to help individuals thrive in their communities.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn btn-p" onclick="go('contact')">Get Started</button>
+            <button class="btn btn-s" onclick="go('about')">About Our Team</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL SERVICES -->
+  <section style="background:var(--glt)" id="all-services">
+    <div class="wrap">
+      <div style="text-align:center;max-width:620px;margin:0 auto 50px">
+        <div class="eyebrow center">Full Service Directory</div>
+        <h2 class="stitle" style="text-align:center">Everything We Offer</h2>
+        <p class="sintro cx">A complete overview of our adult and community-based services. Youth-specific programs are detailed on our <a onclick="go('youth')" style="color:var(--teal);font-weight:600;cursor:pointer">Youth Programs page</a>.</p>
+      </div>
+      <div class="sdc-grid">
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">🏠</div><div class="sdcard-htxt"><h3>In-Home Caregiving</h3><div class="sdcard-cat">Core Service · 24/7 Available</div></div></div>
+          <div class="sdcard-body"><p>Professional caregivers provide daily personal care, medication management, meal preparation, light housekeeping, behavior support, and compassionate companionship — customized to your loved one's individual schedule and preferences.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('contact')">Inquire Now →</span></div></div>
+        </div>
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">🌿</div><div class="sdcard-htxt"><h3>Respite Services</h3><div class="sdcard-cat">Caregiver Relief</div></div></div>
+          <div class="sdcard-body"><p>Our respite services offer temporary relief for family caregivers, allowing them to rest and recharge while their loved ones receive quality care and attentive support from our certified team.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('contact')">Learn More →</span></div></div>
+        </div>
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">☀️</div><div class="sdcard-htxt"><h3>Adult Day Services (A.M. &amp; P.M.)</h3><div class="sdcard-cat">Day Program · Morning &amp; Afternoon</div></div></div>
+          <div class="sdcard-body"><p>We provide structured adult day services in both morning and afternoon sessions — offering social engagement, therapeutic activities, and a safe, nurturing environment for adults who benefit from routine and structured support.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('contact')">View Program →</span></div></div>
+        </div>
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">🧑‍🤝‍🧑</div><div class="sdcard-htxt"><h3>Community Group Activities</h3><div class="sdcard-cat">Social &amp; Community</div></div></div>
+          <div class="sdcard-body"><p>A diverse range of community group activities that promote inclusion, build social skills, and strengthen community ties — designed to encourage active participation and genuine connection.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('contact')">Find Out More →</span></div></div>
+        </div>
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">💼</div><div class="sdcard-htxt"><h3>Vocational Rehabilitation</h3><div class="sdcard-cat">Employment Support</div></div></div>
+          <div class="sdcard-body"><p>Our vocational services assist individuals in gaining practical skills and professional support to find and maintain meaningful employment — focusing on each person's unique strengths and long-term career goals.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('contact')">Start Your Path →</span></div></div>
+        </div>
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">🐴</div><div class="sdcard-htxt"><h3>Horse &amp; Animal Interactions</h3><div class="sdcard-cat">Therapeutic · All Ages</div></div></div>
+          <div class="sdcard-body"><p>Experience the proven therapeutic benefits of equine and animal-assisted activities. Our programs promote emotional healing, build confidence, and enhance personal development through safe interactions with animals.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('contact')">Explore Program →</span></div></div>
+        </div>
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">🩺</div><div class="sdcard-htxt"><h3>On-Call Nurse Services</h3><div class="sdcard-cat">Medical Support · On Demand</div></div></div>
+          <div class="sdcard-body"><p>Our on-call nursing staff is available to address medical concerns promptly and coordinate with healthcare providers. Available 24/7 to support individuals when they need it most.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('contact')">Learn More →</span></div></div>
+        </div>
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">🚐</div><div class="sdcard-htxt"><h3>Non-Medical Transportation</h3><div class="sdcard-cat">Transportation</div></div></div>
+          <div class="sdcard-body"><p>Safe, reliable, and comfortable transport for individuals who need assistance getting to appointments, day programs, community activities, or social events — with trained drivers committed to every passenger's comfort.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('contact')">Schedule a Ride →</span></div></div>
+        </div>
+        <div class="sdcard rv">
+          <div class="sdcard-hdr"><div class="sico" style="margin-bottom:0">🎓</div><div class="sdcard-htxt"><h3>Staff Training &amp; Certification</h3><div class="sdcard-cat">Team Standards</div></div></div>
+          <div class="sdcard-body"><p>Every team member is certified in CPI techniques and Prevention First Support (PFS), ensuring each caregiver is prepared to handle challenging situations with safety and compassion. All staff hold CPR and First Aid certification.</p><div class="sdcard-foot"><span class="sdcard-lnk" onclick="go('about')">Meet Our Team →</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE ROW -->
+  <div class="featrow" style="background:#fff">
+    <div class="rv">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/185e7929-15ea-4382-b6be-5e474247b54e/Reliance+Care+Solutions.jpg"
+        alt="In-home care Toledo Ohio" class="featimg"
+        onerror="this.style.background='linear-gradient(135deg,#1a6870,#2da96b)'">
+    </div>
+    <div class="rv">
+      <div class="eyebrow">Featured Service</div>
+      <h2 class="stitle">In-Home Care That Feels Like Home</h2>
+      <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:12px">The goal of in-home caregiving is simple: help people live better lives in the spaces they love most. Our caregivers become a trusted extension of your family, providing:</p>
+      <ul class="fcl">
+        <li>Personal hygiene assistance and bathing support</li>
+        <li>Medication reminders and management</li>
+        <li>Meal planning, preparation, and feeding support</li>
+        <li>Light housekeeping and laundry</li>
+        <li>Behavior support and positive reinforcement</li>
+        <li>Community integration and social outings</li>
+        <li>Companionship, conversation, and emotional care</li>
+      </ul>
+      <button class="btn btn-p" onclick="go('contact')" style="margin-top:26px">Request In-Home Care</button>
+    </div>
+  </div>
+
+  <!-- STAFF TRAINING -->
+  <section style="background:var(--cream)">
+    <div class="wrap">
+      <div class="eyebrow">Our Standards</div>
+      <h2 class="stitle">Training You Can Trust</h2>
+      <p class="sintro">Every Reliance Care Solutions team member undergoes rigorous training and certification before working with clients.</p>
+      <div class="trainblock rv" style="margin-top:36px">
+        <div>
+          <h3>Certified &amp; Prepared for Every Situation</h3>
+          <p>We hold our staff to the highest standards of safety and professionalism. All caregivers complete multi-level certification and ongoing training to stay current with best practices in disability support and personal care.</p>
+        </div>
+        <div class="tbadges">
+          <div class="tbadge"><div class="tbadge-ico">🛡️</div><div class="tbadge-txt"><strong>Crisis Prevention Institute (CPI)</strong><span>Certified to safely manage challenging situations</span></div></div>
+          <div class="tbadge"><div class="tbadge-ico">❤️‍🔥</div><div class="tbadge-txt"><strong>CPR &amp; First Aid Certified</strong><span>All staff certified in emergency response</span></div></div>
+          <div class="tbadge"><div class="tbadge-ico">🎓</div><div class="tbadge-txt"><strong>Prevention First Support (PFS)</strong><span>Trained to provide immediate care when necessary</span></div></div>
+          <div class="tbadge"><div class="tbadge-ico">✅</div><div class="tbadge-txt"><strong>DODD Background Screening</strong><span>Verified and credentialed by the state of Ohio</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ctaband">
+    <div class="ctaband-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/8027cebd-881f-41bc-8a21-b17b61342302/in-home+care+for+adults+-+in+home+care+professional+-+direct+care+workers+toledo')"></div>
+    <div class="ctaband-c">
+      <div class="eyebrow lt center">Get Started Today</div>
+      <h2 class="stitle wh" style="text-align:center;margin-bottom:16px">Not Sure Which Service Is Right for You?</h2>
+      <p>Our team is here to help. Call us or fill out our intake form and we'll match you with the services that best fit your unique situation.</p>
+      <div class="ctaband-acts">
+        <button class="btn btn-p" onclick="go('contact')">Talk to Our Team</button>
+        <a href="tel:4197040316" class="btn btn-ow">(419) 704-0316</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /pg-services -->
+<!-- ============================================================
+     YOUTH PAGE
+============================================================ -->
+<div id="pg-youth" class="page">
+
+  <div class="phero" style="min-height:520px">
+    <div class="phero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b1ea37ec-5ba5-45c2-b991-4211c83a3bde/Group+activities+for+those+with+disabilities+in+toledo')"></div>
+    <div class="phero-ov" style="background:linear-gradient(105deg,rgba(10,25,46,.93) 48%,rgba(198,155,58,.18) 100%)"></div>
+    <div class="phero-c">
+      <div class="breadcrumb" style="color:var(--gold2)">Youth Programs</div>
+      <h1>Support &amp; Services<br>Designed for Children</h1>
+      <p>A growing suite of specialized programs for children and young people — providing structured support, safe environments, assessments, and pathways to grow, heal, and thrive.</p>
+      <div class="hacts">
+        <button class="btn btn-p" onclick="go('contact')">Inquire About Youth Services</button>
+        <button class="btn btn-ow" onclick="document.getElementById('youth-programs').scrollIntoView({behavior:'smooth'})">View All Programs</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section style="background:var(--cream)">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center" class="svc-intro-grid">
+        <div class="rv" style="position:relative">
+          <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/e6487f61-1d32-47b5-b88c-9aff0bcbff8e/Reliance+Care+Solutions+%285%29.jpg"
+            alt="Youth programs Reliance Care Solutions"
+            style="width:100%;height:500px;object-fit:cover;border-radius:22px;display:block"
+            onerror="this.style.background='linear-gradient(135deg,#0c1f38,#1a6870)'">
+          <div style="position:absolute;bottom:22px;left:22px;right:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="background:#fff;border-radius:12px;padding:14px 16px;box-shadow:0 8px 32px rgba(0,0,0,.1);border-left:3px solid var(--gold)"><strong style="display:block;font-family:var(--fd);font-size:1.5rem;color:var(--navy);line-height:1">24/7</strong><span style="font-size:12px;color:var(--gray);display:block;margin-top:3px">Emergency Placement</span></div>
+            <div style="background:#fff;border-radius:12px;padding:14px 16px;box-shadow:0 8px 32px rgba(0,0,0,.1);border-left:3px solid var(--gold)"><strong style="display:block;font-family:var(--fd);font-size:1.5rem;color:var(--navy);line-height:1">CANS</strong><span style="font-size:12px;color:var(--gray);display:block;margin-top:3px">Certified Assessments</span></div>
+          </div>
+        </div>
+        <div class="rv">
+          <div class="eyebrow gold">For Children &amp; Families</div>
+          <h2 class="stitle">Caring for Young People at Every Step</h2>
+          <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:16px">Reliance Care Solutions offers an expanding suite of youth-focused services that go beyond basic support. We recognize that children have unique needs — emotionally, developmentally, and medically — and our programs are built to address all of them.</p>
+          <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:26px">From structured group home living and certified CANS assessments to emergency respite placements and therapeutic animal interactions — our team provides a stable, caring presence for children who need it most.</p>
+          <button class="btn btn-p" onclick="go('contact')">Contact Our Youth Services Team</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS GRID -->
+  <section style="background:#fff" id="youth-programs">
+    <div class="wrap">
+      <div style="text-align:center;max-width:620px;margin:0 auto 48px">
+        <div class="eyebrow center gold">Youth Program Directory</div>
+        <h2 class="stitle" style="text-align:center">Our Youth Programs &amp; Services</h2>
+        <p class="sintro cx">All programs are delivered by trained, certified staff committed to every child's individual growth and well-being.</p>
+      </div>
+      <div class="ypgrid">
+        <div class="ypcard rv">
+          <div class="ypcard-banner">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/185e7929-15ea-4382-b6be-5e474247b54e/Reliance+Care+Solutions.jpg" alt="Youth Respite" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ypcard-banner-fb" style="display:none;background:linear-gradient(135deg,#1a6870,#2da96b)">🌿</div>
+            <div class="ypcard-tag">Respite Care</div>
+          </div>
+          <div class="ypcard-body"><h3>Youth Respite Services</h3><p>Temporary, quality care for children so family caregivers can rest and recharge — with full assurance that their child is safe, comfortable, and well-supported by our certified team. Short-term and ongoing arrangements available.</p><button class="btn btn-p" onclick="go('contact')">Learn More</button></div>
+        </div>
+        <div class="ypcard rv">
+          <div class="ypcard-banner">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b860b3a6-42ee-4478-ae23-64a006e359ff/Reliance+Care+Solutions+%282%29.jpg" alt="CANS Assessment" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ypcard-banner-fb" style="display:none;background:linear-gradient(135deg,#0c1f38,#1a6870)">📋</div>
+            <div class="ypcard-tag">Assessment</div>
+          </div>
+          <div class="ypcard-body"><h3>CANS — Certified Child Assessments</h3><p>We conduct certified Child and Adolescent Needs and Strengths (CANS) assessments to comprehensively identify each child's unique needs, strengths, and circumstances — ensuring targeted, timely support plans are put in place from day one.</p><button class="btn btn-p" onclick="go('contact')">Schedule Assessment</button></div>
+        </div>
+        <div class="ypcard rv">
+          <div class="ypcard-banner">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b1ea37ec-5ba5-45c2-b991-4211c83a3bde/Group+activities+for+those+with+disabilities+in+toledo" alt="Animal Therapy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ypcard-banner-fb" style="display:none;background:linear-gradient(135deg,#2da96b,#c69b3a)">🐴</div>
+            <div class="ypcard-tag">Therapeutic</div>
+          </div>
+          <div class="ypcard-body"><h3>Animal-Assisted Therapy for Youth</h3><p>Our equine and animal interaction programs help young people develop emotional regulation, self-confidence, trust, and meaningful interpersonal skills within a calm, structured, and therapeutic environment proven to support healing.</p><button class="btn btn-p" onclick="go('contact')">Explore Program</button></div>
+        </div>
+        <div class="ypcard rv">
+          <div class="ypcard-banner">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/8027cebd-881f-41bc-8a21-b17b61342302/in-home+care+for+adults+-+in+home+care+professional+-+direct+care+workers+toledo" alt="Emergency Respite" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="ypcard-banner-fb" style="display:none;background:linear-gradient(135deg,#8b1a1a,#c62828)">🚨</div>
+            <div class="ypcard-tag" style="background:#c62828">Emergency</div>
+          </div>
+          <div class="ypcard-body"><h3>Emergency Respite Placement</h3><p>When children need immediate, safe support, our emergency respite placement program provides a compassionate and structured environment around the clock. We respond quickly during times of crisis, ensuring every child receives stability and care without delay.</p><button class="btn btn-red" onclick="go('contact')">Emergency Contact</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUP HOME -->
+  <div class="ghfeat">
+    <div class="ghfeat-circle"></div>
+    <div class="gh-i wrap">
+      <div class="gh-img-wrap rv">
+        <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b860b3a6-42ee-4478-ae23-64a006e359ff/Reliance+Care+Solutions+%282%29.jpg"
+          alt="Group Home Services for Children"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="gh-img-fb" style="display:none">🏡</div>
+        <div class="gh-cap">Providing safe, structured, home-like environments for children who need consistent support.</div>
+      </div>
+      <div class="rv">
+        <div class="eyebrow gold">Safe &amp; Structured Living</div>
+        <h2 class="stitle wh">Group Home Services for Children</h2>
+        <p style="font-size:15.5px;color:rgba(255,255,255,.68);line-height:1.78;margin-bottom:16px">Our group home services offer a safe, nurturing, and structured living environment for children who require consistent, professional support. We treat every child as an individual — focusing on personal growth, emotional development, and overall well-being.</p>
+        <p style="font-size:15.5px;color:rgba(255,255,255,.68);line-height:1.78;margin-bottom:22px">Trained residential staff maintain stable routines, supportive relationships, and a warm home atmosphere where children can heal, develop, and build foundations for a better future.</p>
+        <div class="ghpts">
+          <div class="ghpt"><div class="ghpt-ico">🏠</div><div class="ghpt-txt"><strong>Safe, Home-Like Environment</strong><span>Structured routines within a warm, caring living space</span></div></div>
+          <div class="ghpt"><div class="ghpt-ico">👤</div><div class="ghpt-txt"><strong>Individual-Centered Care</strong><span>Every child receives a personalized support plan</span></div></div>
+          <div class="ghpt"><div class="ghpt-ico">🎓</div><div class="ghpt-txt"><strong>Trained Residential Staff</strong><span>CPI and PFS certified staff available around the clock</span></div></div>
+          <div class="ghpt"><div class="ghpt-ico">📈</div><div class="ghpt-txt"><strong>Growth &amp; Development Focus</strong><span>Programs designed to support long-term personal progress</span></div></div>
+        </div>
+        <button class="btn btn-p" onclick="go('contact')">Inquire About Group Home Placement</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CANS -->
+  <section class="canssec">
+    <div class="wrap">
+      <div class="cans-i">
+        <div class="rv">
+          <div class="eyebrow">Evidence-Based Assessment</div>
+          <h2 class="stitle">What Is a CANS Assessment?</h2>
+          <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:12px">The Child and Adolescent Needs and Strengths (CANS) tool is a standardized, certified assessment that helps us fully understand a child's situation — identifying needs, strengths, and the right level of care.</p>
+          <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:22px">At Reliance Care Solutions, we are certified to conduct these assessments to ensure every child's unique circumstances are recognized and a timely care plan is built around them.</p>
+          <div class="cans-steps">
+            <div class="cstep"><div class="cstep-num">1</div><div class="cstep-txt"><strong>Initial Intake &amp; Consultation</strong><span>We meet with the family to understand the child's background, current situation, and immediate needs.</span></div></div>
+            <div class="cstep"><div class="cstep-num">2</div><div class="cstep-txt"><strong>Certified CANS Assessment</strong><span>Our certified assessors conduct the formal CANS evaluation to document strengths and needs comprehensively.</span></div></div>
+            <div class="cstep"><div class="cstep-num">3</div><div class="cstep-txt"><strong>Personalized Care Plan</strong><span>Results are used to build a targeted support plan that addresses each identified need and amplifies existing strengths.</span></div></div>
+            <div class="cstep"><div class="cstep-num">4</div><div class="cstep-txt"><strong>Ongoing Review &amp; Adjustment</strong><span>Plans are reviewed regularly and updated as the child grows and their circumstances evolve.</span></div></div>
+          </div>
+        </div>
+        <div class="rv">
+          <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/185e7929-15ea-4382-b6be-5e474247b54e/Reliance+Care+Solutions.jpg"
+            alt="CANS assessment child care" class="cans-img"
+            onerror="this.style.background='linear-gradient(135deg,#1a6870,#2da96b)'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIMAL THERAPY -->
+  <section class="ansec">
+    <div class="wrap">
+      <div class="an-i">
+        <div class="rv">
+          <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b167d677-8cb4-4800-ab62-db25e4f045dc/the+best+in+home+care+services+in+northwest+ohio+with+reliance+care+solutions"
+            alt="Animal therapy youth" class="an-img"
+            onerror="this.style.background='linear-gradient(135deg,#2da96b,#c69b3a)'">
+        </div>
+        <div class="rv">
+          <div class="eyebrow">Therapeutic Programs</div>
+          <h2 class="stitle">The Power of Animal-Assisted Therapy</h2>
+          <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:16px">Horse and animal interactions offer a uniquely powerful therapeutic experience for children — particularly those who have experienced trauma, social challenges, or developmental delays. Animals provide non-judgmental, calming relationships that help young people open up, build trust, and develop key life skills.</p>
+          <p style="font-size:15.5px;color:var(--gray);line-height:1.78;margin-bottom:16px">Our programs are guided by experienced staff in a safe, nurturing environment — designed to support emotional healing and personal development at every step.</p>
+          <div class="bengrid">
+            <div class="bchip">Emotional Regulation</div>
+            <div class="bchip">Confidence Building</div>
+            <div class="bchip">Trust Development</div>
+            <div class="bchip">Social Skills</div>
+            <div class="bchip">Anxiety Reduction</div>
+            <div class="bchip">Trauma Recovery</div>
+            <div class="bchip">Communication Skills</div>
+            <div class="bchip">Empathy &amp; Compassion</div>
+          </div>
+          <button class="btn btn-p" onclick="go('contact')" style="margin-top:26px">Enroll in Animal Therapy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY -->
+  <section style="background:var(--glt)">
+    <div class="wrap">
+      <div class="embar rv">
+        <div class="embar-txt"><h3>🚨 Emergency Respite Placement — Available Now</h3><p>If a child needs immediate placement and support, our emergency respite team is ready to respond 24/7. We provide a safe, structured, and nurturing environment during times of crisis — because children can't wait.</p></div>
+        <div class="embar-cta"><a href="tel:4197040316" class="btn btn-w" style="font-size:16px;padding:15px 30px;color:#c62828;white-space:nowrap">(419) 704-0316</a><p>Available around the clock</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ctaband">
+    <div class="ctaband-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b1ea37ec-5ba5-45c2-b991-4211c83a3bde/Group+activities+for+those+with+disabilities+in+toledo')"></div>
+    <div class="ctaband-c">
+      <div class="eyebrow gold center">Get Support Today</div>
+      <h2 class="stitle wh" style="text-align:center;margin-bottom:16px">Every Child Deserves a Safe Place to Grow</h2>
+      <p>Contact our youth services team today — we'll work with you to find the right program and build a plan that puts the child's needs first.</p>
+      <div class="ctaband-acts">
+        <button class="btn btn-p" onclick="go('contact')">Contact Youth Services</button>
+        <button class="btn btn-ow" onclick="go('services')">View Adult Services</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /pg-youth -->
+<!-- ============================================================
+     ABOUT PAGE
+============================================================ -->
+<div id="pg-about" class="page">
+
+  <div class="phero">
+    <div class="phero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/8027cebd-881f-41bc-8a21-b17b61342302/in-home+care+for+adults+-+in+home+care+professional+-+direct+care+workers+toledo')"></div>
+    <div class="phero-ov"></div>
+    <div class="phero-c">
+      <div class="breadcrumb">About Us</div>
+      <h1>Our Story, Our Mission,<br>Our Commitment to You</h1>
+      <p>Reliance Care Solutions was built on a simple belief: every person deserves to live with dignity, independence, and belonging — no matter their circumstances.</p>
+      <div class="hacts">
+        <button class="btn btn-p" onclick="go('contact')">Get in Touch</button>
+        <button class="btn btn-ow" onclick="go('services')">Our Services</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <section style="background:var(--cream)">
+    <div class="wrap">
+      <div class="mission-grid">
+        <div class="rv">
+          <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b167d677-8cb4-4800-ab62-db25e4f045dc/the+best+in+home+care+services+in+northwest+ohio+with+reliance+care+solutions"
+            alt="Reliance Care Solutions team" class="mission-img"
+            onerror="this.style.background='linear-gradient(135deg,#0c1f38,#1a6870)'">
+          <div class="mquote">
+            <blockquote>"Our fingerprints do not fade from the lives we touch."</blockquote>
+            <cite>— Reliance Care Solutions</cite>
+          </div>
+        </div>
+        <div class="rv">
+          <div class="eyebrow">About Reliance Care Solutions</div>
+          <h2 class="stitle">More Than a Care Provider — A Community Partner</h2>
+          <div class="mission-txt">
+            <p>Reliance Care Solutions is a Northwest Ohio-based care provider with a mission to deliver compassionate, personalized support to individuals with developmental disabilities, seniors, children, and anyone who needs a helping hand.</p>
+            <p>We are certified by the <strong>Ohio Department of Developmental Disabilities (DODD)</strong> in all 88 Ohio counties. That certification isn't just a credential — it reflects our unwavering commitment to professional standards, ethical practice, and consistent quality of care.</p>
+            <p>We are available 7 days per week, 24 hours a day — because those who depend on care cannot put their needs on hold. Our caregivers don't just do a job; they build lasting relationships that truly make a difference in people's lives.</p>
+          </div>
+          <button class="btn btn-p" onclick="go('contact')">Work With Our Team</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="sband">
+    <div class="sgrid wrap">
+      <div class="rv"><span class="snum">88</span><span class="slbl">Ohio Counties Certified</span></div>
+      <div class="rv"><span class="snum">24/7</span><span class="slbl">Care Availability</span></div>
+      <div class="rv"><span class="snum">12+</span><span class="slbl">Programs &amp; Services</span></div>
+      <div class="rv"><span class="snum">100%</span><span class="slbl">Client-Centered Approach</span></div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <section style="background:#fff">
+    <div class="wrap">
+      <div style="text-align:center;max-width:620px;margin:0 auto">
+        <div class="eyebrow center">What Drives Us</div>
+        <h2 class="stitle" style="text-align:center">Our Core Values</h2>
+      </div>
+      <div class="vgrid">
+        <div class="vcard rv"><div class="vcard-ico">💙</div><h3>Dignity &amp; Respect</h3><p>Every individual we serve deserves unconditional dignity, respect, and compassion — regardless of their age, ability, or background. This is the cornerstone of everything we do.</p></div>
+        <div class="vcard rv"><div class="vcard-ico">🤝</div><h3>Reliability &amp; Trust</h3><p>Families trust us with their loved ones' most vulnerable moments. We honor that trust every day through transparency, consistency, and caregivers who show up — physically and emotionally.</p></div>
+        <div class="vcard rv"><div class="vcard-ico">🌱</div><h3>Growth &amp; Empowerment</h3><p>We believe every person has the capacity to grow. Our programs are built to help individuals develop skills, gain independence, and live fuller, more meaningful lives in their communities.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section style="background:var(--glt)">
+    <div class="wrap">
+      <div class="eyebrow">Our Credentials</div>
+      <h2 class="stitle">Certifications &amp; Training Standards</h2>
+      <p class="sintro">We hold ourselves to the highest professional standards. Every member of our team is trained, certified, and screened before working with clients.</p>
+      <div class="certgrid">
+        <div class="certcard rv"><div class="certcard-ico">🏅</div><div class="certcard-txt"><h3>DODD Certified — All 88 Ohio Counties</h3><p>Certified by the Ohio Department of Developmental Disabilities to provide services across all 88 Ohio counties, meeting rigorous quality and compliance standards statewide.</p></div></div>
+        <div class="certcard rv"><div class="certcard-ico">🛡️</div><div class="certcard-txt"><h3>Crisis Prevention Institute (CPI)</h3><p>All staff are trained in CPI techniques to effectively manage challenging or crisis situations — ensuring the safety and well-being of both clients and caregivers in every scenario.</p></div></div>
+        <div class="certcard rv"><div class="certcard-ico">❤️‍🔥</div><div class="certcard-txt"><h3>CPR &amp; First Aid Certified</h3><p>Our entire team holds active CPR and First Aid certification, ensuring we're prepared to respond to medical emergencies quickly and effectively — giving families peace of mind.</p></div></div>
+        <div class="certcard rv"><div class="certcard-ico">🎓</div><div class="certcard-txt"><h3>Prevention First Support (PFS)</h3><p>Staff are trained in PFS protocols to provide immediate and preventive care when necessary — reducing risk and supporting clients' well-being proactively and with confidence.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section style="background:#fff">
+    <div class="wrap">
+      <div class="eyebrow">Beyond Daily Care</div>
+      <h2 class="stitle">Building Community &amp; Connection</h2>
+      <p class="sintro">At Reliance Care Solutions, we go beyond the basics — investing in real community and vibrant social lives for every client.</p>
+      <div class="commgrid">
+        <div class="commcard rv">
+          <div class="commcard-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b1ea37ec-5ba5-45c2-b991-4211c83a3bde/Group+activities+for+those+with+disabilities+in+toledo" alt="Community group activities" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="commcard-img-fb" style="display:none;background:linear-gradient(135deg,#1a6870,#2da96b)">🎢</div>
+          </div>
+          <div class="commcard-body"><h3>Weekly Community Outings</h3><p>From Cedar Point and Metroparks to bowling, go-cart racing, swimming, and out-of-town adventures — our clients enjoy a rich, active social life every week.</p></div>
+        </div>
+        <div class="commcard rv">
+          <div class="commcard-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b860b3a6-42ee-4478-ae23-64a006e359ff/Reliance+Care+Solutions+%282%29.jpg" alt="Monthly family nights" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="commcard-img-fb" style="display:none;background:linear-gradient(135deg,#0c1f38,#1a6870)">👨‍👩‍👧‍👦</div>
+          </div>
+          <div class="commcard-body"><h3>Monthly Family Nights</h3><p>Regular family evenings bring clients and their loved ones together in a welcoming setting — strengthening the bonds that matter most and providing the comforts of community.</p></div>
+        </div>
+        <div class="commcard rv">
+          <div class="commcard-img">
+            <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/185e7929-15ea-4382-b6be-5e474247b54e/Reliance+Care+Solutions.jpg" alt="Annual group vacations" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="commcard-img-fb" style="display:none;background:linear-gradient(135deg,#2da96b,#c69b3a)">✈️</div>
+          </div>
+          <div class="commcard-body"><h3>Annual Group Vacations</h3><p>Each year, our clients look forward to group vacations — memorable trips that celebrate milestones, deepen friendships, and create experiences that last a lifetime.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <div class="servesec">
+    <div class="serve-i">
+      <div class="serve-txt rv">
+        <div class="eyebrow lt">Who We Help</div>
+        <h2 class="stitle wh">Care for Every Stage of Life</h2>
+        <p>We offer flexible, compassionate direct care support for a wide range of individuals. Whether you need a few hours of caregiver relief or comprehensive, round-the-clock support, we are here for you.</p>
+        <div class="chips">
+          <span class="chip">Developmental Disabilities</span>
+          <span class="chip">Physical Disabilities</span>
+          <span class="chip">Seniors &amp; Elderly</span>
+          <span class="chip">Children &amp; Youth</span>
+          <span class="chip">Cancer Patients</span>
+          <span class="chip">Family Caregivers</span>
+          <span class="chip">Post-Surgical Recovery</span>
+          <span class="chip">Behavioral Support Needs</span>
+        </div>
+        <button class="btn btn-p" onclick="go('contact')" style="margin-top:26px">Start the Conversation</button>
+      </div>
+      <div class="serve-vis rv">
+        <div class="svi"><img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/185e7929-15ea-4382-b6be-5e474247b54e/Reliance+Care+Solutions.jpg" alt="Home care professionals" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="svi-fb" style="display:none;background:linear-gradient(135deg,#1a6870,#2da96b);height:210px">❤️</div></div>
+        <div class="svi"><img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b860b3a6-42ee-4478-ae23-64a006e359ff/Reliance+Care+Solutions+%282%29.jpg" alt="Caregiver with client" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="svi-fb" style="display:none;background:linear-gradient(135deg,#0c1f38,#1a6870);height:180px">🤝</div></div>
+        <div class="svi"><img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/8027cebd-881f-41bc-8a21-b17b61342302/in-home+care+for+adults+-+in+home+care+professional+-+direct+care+workers+toledo" alt="Direct care workers Toledo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="svi-fb" style="display:none;background:linear-gradient(135deg,#2da96b,#c69b3a);height:180px">🌟</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ctaband">
+    <div class="ctaband-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b167d677-8cb4-4800-ab62-db25e4f045dc/the+best+in+home+care+services+in+northwest+ohio+with+reliance+care+solutions')"></div>
+    <div class="ctaband-c">
+      <div class="eyebrow lt center">Join Our Family</div>
+      <h2 class="stitle wh" style="text-align:center;margin-bottom:16px">Ready to Experience the Reliance Difference?</h2>
+      <p>Whether you're looking for care services for a loved one or exploring career opportunities, we'd love to connect with you.</p>
+      <div class="ctaband-acts">
+        <button class="btn btn-p" onclick="go('contact')">Contact Us Today</button>
+        <a href="https://form.jotform.com/241017666657159" class="btn btn-ow" target="_blank">Apply Now</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /pg-about -->
+<!-- ============================================================
+     CONTACT PAGE
+============================================================ -->
+<div id="pg-contact" class="page">
+
+  <div class="phero" style="min-height:380px">
+    <div class="phero-bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/b860b3a6-42ee-4478-ae23-64a006e359ff/Reliance+Care+Solutions+%282%29.jpg')"></div>
+    <div class="phero-ov"></div>
+    <div class="phero-c">
+      <div class="breadcrumb">Contact Us</div>
+      <h1>Let's Find the Right Care<br>For Your Loved One</h1>
+      <p>Reach out today. Our team responds within 1–2 business days. For emergencies, call us anytime — we're available 24/7.</p>
+    </div>
+  </div>
+
+  <section style="background:var(--cream)">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <!-- LEFT: Contact Info -->
+        <div>
+          <div class="eyebrow" style="margin-bottom:12px">How to Reach Us</div>
+          <h2 class="stitle" style="margin-bottom:26px">We're Here to Help</h2>
+          <div class="urgbar rv">
+            <div class="urgbar-txt"><h4>🚨 Emergency Placement Available</h4><p>For urgent situations involving children needing immediate respite placement, call us now. We respond around the clock.</p></div>
+            <a href="tel:4197040316" class="btn btn-p">(419) 704-0316</a>
+          </div>
+          <div class="ciccards">
+            <div class="cic rv">
+              <div class="cic-ico">📞</div>
+              <div class="cic-txt"><h4>Phone</h4><a href="tel:4197040316">(419) 704-0316</a><span class="sub">Mon–Fri 9am–5pm · Emergencies Anytime</span></div>
+            </div>
+            <div class="cic rv">
+              <div class="cic-ico">✉️</div>
+              <div class="cic-txt"><h4>Email</h4><a href="mailto:info@reliancecaresolutions.com">info@reliancecaresolutions.com</a><span class="sub">We'll respond within 1–2 business days</span></div>
+            </div>
+            <div class="cic rv">
+              <div class="cic-ico">📍</div>
+              <div class="cic-txt"><h4>Office Address</h4><p>3454 Oak Alley Ct., Suite 108<br>Toledo, OH 43606</p><span class="sub">Northwest Ohio — Serving All 88 Counties</span></div>
+            </div>
+            <div class="cic rv">
+              <div class="cic-ico">🕐</div>
+              <div class="cic-txt"><h4>Office Hours</h4><p>Monday – Friday: 9:00am – 5:00pm</p><span class="sub">Care services available 7 days/week, 24 hours/day</span></div>
+            </div>
+          </div>
+          <div class="mapbox rv">
+            <span style="font-size:36px">📍</span>
+            <p>3454 Oak Alley Ct., Suite 108, Toledo, OH 43606</p>
+            <a href="https://maps.google.com/?q=3454+Oak+Alley+Ct+Suite+108+Toledo+OH+43606" target="_blank">Open in Google Maps →</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="rv">
+          <div class="formcard">
+            <h2>Request Care Services</h2>
+            <p>Tell us about your situation and we'll reach out to schedule a meet and greet — no obligation, just a conversation.</p>
+            <div class="intopts">
+              <div class="iopt sel" onclick="selOpt(this)"><div class="iico">🏠</div><h4>Adult / Senior Care</h4><p>In-home support for adults</p></div>
+              <div class="iopt" onclick="selOpt(this)"><div class="iico">🧒</div><h4>Youth Programs</h4><p>Services for children</p></div>
+            </div>
+            <form class="fgrid" onsubmit="submitForm(event)">
+              <div class="frow2">
+                <div class="fg"><label>Your Full Name *</label><input type="text" placeholder="Jane Smith" required></div>
+                <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="(419) 555-0100" required></div>
+              </div>
+              <div class="fg"><label>Email Address *</label><input type="email" placeholder="jane@example.com" required></div>
+              <div class="fg"><label>Care is Needed For</label>
+                <select><option value="">Select one…</option><option>Myself</option><option>My parent / grandparent</option><option>My child</option><option>Another family member</option><option>A client I support</option></select>
+              </div>
+              <div class="fg"><label>Services You're Interested In</label>
+                <select><option value="">Select a service…</option><option>In-Home Caregiving</option><option>Respite Services</option><option>Adult Day Services</option><option>Vocational Rehabilitation</option><option>Non-Medical Transportation</option><option>Horse &amp; Animal Interactions</option><option>Youth Group Home Services</option><option>CANS Assessment</option><option>Emergency Respite Placement</option><option>Multiple / Not Sure</option></select>
+              </div>
+              <div class="fg"><label>Best Time to Call</label>
+                <select><option>Morning (9am–12pm)</option><option>Afternoon (12pm–5pm)</option><option>As soon as possible</option></select>
+              </div>
+              <div class="fg"><label>Tell Us More (Optional)</label><textarea placeholder="Share any details about care needs, current situation, or questions…"></textarea></div>
+              <button type="submit" class="fsubmit" id="fsubmit-btn">Submit Request</button>
+              <p class="fdisc">We respect your privacy. Your information is never shared with third parties.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY ONLINE -->
+  <div style="background:var(--navy);padding:52px 5%;text-align:center">
+    <div style="max-width:640px;margin:0 auto">
+      <p style="font-size:1rem;color:rgba(255,255,255,.55);margin-bottom:10px">Prefer to apply directly online?</p>
+      <h3 style="font-family:var(--fd);font-size:1.7rem;color:#fff;margin-bottom:20px">Submit Your Application Through Our Secure Form</h3>
+      <a href="https://form.jotform.com/241017666657159" class="btn btn-p" target="_blank" style="font-size:16px;padding:15px 34px">Open Application Form</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section style="background:#fff">
+    <div class="wrap">
+      <div style="text-align:center;max-width:620px;margin:0 auto">
+        <div class="eyebrow center">Common Questions</div>
+        <h2 class="stitle" style="text-align:center">Frequently Asked Questions</h2>
+      </div>
+      <div class="faqgrid">
+        <div class="faqitem rv"><h3>Which counties do you serve?</h3><p>Reliance Care Solutions is certified in all 88 Ohio counties by the Ohio Department of Developmental Disabilities. While based in Toledo, we serve individuals across the entire state of Ohio.</p></div>
+        <div class="faqitem rv"><h3>What payment options do you accept?</h3><p>We accept multiple Ohio waiver programs (Individual Options, Level One, SELF, My Life My Choice), Medicare, Medicaid, and private pay. Our team can help determine which options you qualify for.</p></div>
+        <div class="faqitem rv"><h3>How quickly can care start?</h3><p>After an initial consultation and assessment, we work as quickly as possible to match you with a caregiver. For emergency situations — including youth placement — we respond immediately.</p></div>
+        <div class="faqitem rv"><h3>Are your caregivers certified?</h3><p>Yes. All caregivers are background-screened, CPR and First Aid certified, and trained in CPI and PFS protocols. We maintain rigorous hiring and training standards to ensure every client is safe and supported.</p></div>
+        <div class="faqitem rv"><h3>Do you offer 24/7 care?</h3><p>Absolutely. We provide caregiving services 7 days a week, 24 hours a day. We also have an on-call RN available for medical questions and emergencies — help is always just a call away.</p></div>
+        <div class="faqitem rv"><h3>What youth services do you offer?</h3><p>We offer group home services, CANS assessments, emergency respite placement, youth respite care, and animal-assisted therapy. Visit our <a onclick="go('youth')" style="color:var(--teal);font-weight:600;cursor:pointer">Youth Programs page</a> for full details.</p></div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /pg-contact -->
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<div id="footer">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c7cd4d5f5e5f64e0cb3a59/409f08f9-744b-40e4-bff0-e00f0e11735e/Reliance+Care+Solutions+Logo.png?format=300w"
+        alt="Reliance Care Solutions" class="ft-logo"
+        onerror="this.style.display='none'">
+      <p>Your reliable personal caregiving service provider in Northwest Ohio. Certified in all 88 Ohio counties by the Ohio Department of Developmental Disabilities.</p>
+      <div class="ftsocials"><a title="Facebook">f</a><a title="LinkedIn">in</a></div>
+    </div>
+    <div class="ftcol">
+      <h4>Services</h4>
+      <ul>
+        <li><a onclick="go('services')">In-Home Caregiving</a></li>
+        <li><a onclick="go('services')">Respite Services</a></li>
+        <li><a onclick="go('services')">Adult Day Services</a></li>
+        <li><a onclick="go('services')">Vocational Rehab</a></li>
+        <li><a onclick="go('services')">Transportation</a></li>
+        <li><a onclick="go('services')">Animal Interactions</a></li>
+      </ul>
+    </div>
+    <div class="ftcol">
+      <h4>Youth Programs</h4>
+      <ul>
+        <li><a onclick="go('youth')">Group Home Services</a></li>
+        <li><a onclick="go('youth')">CANS Assessment</a></li>
+        <li><a onclick="go('youth')">Emergency Respite</a></li>
+        <li><a onclick="go('youth')">Youth Respite Care</a></li>
+        <li><a onclick="go('youth')">Animal Therapy</a></li>
+      </ul>
+    </div>
+    <div class="ftcol">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:4197040316">(419) 704-0316</a></li>
+        <li><a href="mailto:info@reliancecaresolutions.com">info@reliancecaresolutions.com</a></li>
+        <li><span>3454 Oak Alley Ct., Suite 108<br>Toledo, OH 43606</span></li>
+        <li><span>Mon–Fri: 9:00am – 5:00pm</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p>&copy; 2024 Reliance Care Solutions. All Rights Reserved.</p>
+    <p style="font-style:italic;color:rgba(255,255,255,.35)">"Our fingerprints do not fade from the lives we touch."</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+var PAGES = ['home','services','youth','about','contact'];
+
+function go(name) {
+  PAGES.forEach(function(p) {
+    var pg = document.getElementById('pg-' + p);
+    var nl = document.getElementById('nl-' + p);
+    if (pg) pg.classList.remove('active');
+    if (nl) nl.classList.remove('on');
+  });
+  var target = document.getElementById('pg-' + name);
+  var navlnk = document.getElementById('nl-' + name);
+  if (target) {
+    target.classList.add('active');
+    if (navlnk) navlnk.classList.add('on');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(initReveal, 120);
+    // Close mobile nav
+    document.getElementById('mobnav').classList.remove('open');
+  }
+}
+
+function toggleMob() {
+  document.getElementById('mobnav').classList.toggle('open');
+}
+
+// Close mob nav on outside click
+document.addEventListener('click', function(e) {
+  var mob = document.getElementById('mobnav');
+  var ham = document.querySelector('.hamburger');
+  if (mob && !mob.contains(e.target) && ham && !ham.contains(e.target)) {
+    mob.classList.remove('open');
+  }
+});
+
+// Nav scroll effect
+window.addEventListener('scroll', function() {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Scroll reveal
+function initReveal() {
+  var items = document.querySelectorAll('.page.active .rv:not(.vis)');
+  if (!items.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function() { entry.target.classList.add('vis'); }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  items.forEach(function(el) { observer.observe(el); });
+}
+
+// Contact form
+function selOpt(el) {
+  document.querySelectorAll('.iopt').forEach(function(o) { o.classList.remove('sel'); });
+  el.classList.add('sel');
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('fsubmit-btn');
+  btn.textContent = '✓ Submitted! We\'ll be in touch soon.';
+  btn.style.background = '#2da96b';
+  btn.disabled = true;
+}
+
+// Youth banner image fallback chain
+function yb_fb1() {
+  var m = document.getElementById('yb-img-main');
+  var f1 = document.getElementById('yb-img-fb1');
+  if (m) m.style.display = 'none';
+  if (f1) f1.style.display = 'block';
+}
+function yb_fb2() {
+  var f1 = document.getElementById('yb-img-fb1');
+  var f2 = document.getElementById('yb-img-fb2');
+  if (f1) f1.style.display = 'none';
+  if (f2) f2.style.display = 'block';
+}
+function yb_fb3() {
+  var f2 = document.getElementById('yb-img-fb2');
+  var fb = document.getElementById('yb-imgbox-fb');
+  if (f2) f2.style.display = 'none';
+  if (fb) fb.classList.add('show');
+}
+
+// Init on load
+document.addEventListener('DOMContentLoaded', function() {
+  initReveal();
+});
+</script>
+</body>
+</html>
